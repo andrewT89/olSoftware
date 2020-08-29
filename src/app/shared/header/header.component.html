@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span class="span-home" [routerLink]="['/']">OL Software 1.0</span>
+    <span class="space"></span>
+  
+    <button *ngIf="!fireService.authenticated" [routerLink]="['/signin']" mat-icon-button>
+      <mat-icon>account_circle</mat-icon>
+    </button>
+  
+    <div *ngIf="fireService.authenticated">
+  
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item disabled>
+          {{ displayName }}
+        </button>
+        <button mat-menu-item (click)="logout()">
+          Cerrar sesión
+        </button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>

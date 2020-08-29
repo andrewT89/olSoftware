@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "OLApp"
+    }
+  },
+  "defaultProject": "OLApp",
+  "cli": {
+    "analytics": false
+  }
 }
